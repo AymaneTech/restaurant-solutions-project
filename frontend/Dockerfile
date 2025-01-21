@@ -2,7 +2,8 @@ FROM node:18.19.0 AS build
 
 WORKDIR /app
 
-COPY package.json ./
+COPY ./package.json ./
+
 RUN npm install && npm install -g @angular/cli@19.1.0
 
 COPY . .
