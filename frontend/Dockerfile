@@ -7,11 +7,11 @@ RUN npm install && npm install -g @angular/cli@19.1.0
 
 COPY . .
 
-RUN ng build
+RUN ng build --configuration production
 
 FROM nginx:latest
 
-COPY --from=build app/dist/aftas-angular /usr/share/nginx/html
+COPY --from=build /app/dist/*/. /usr/share/nginx/html/
 
 EXPOSE 80
 
