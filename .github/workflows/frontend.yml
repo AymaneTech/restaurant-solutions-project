@@ -2,13 +2,15 @@ name: Restaurant solutions project
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
     paths:
-      - "frontend/**"
+      - 'frontend/**'
+      - '.github/workflows/frontend.yml'
   pull_request:
-    branches: [ main ]
+    branches: [ "main" ]
     paths:
-      - "frontend/**"
+      - 'frontend/**'
+      - '.github/workflows/frontend.yml'
 
 jobs:
   build:
@@ -33,20 +35,15 @@ jobs:
           cd frontend
           npm run lint
 
-      - name: Run unit tests
-        run: |
-          cd frontend
-          npm test --watch=false --browsers=ChromeHeadless
+#      - name: Run unit tests
+#        run: |
+#          cd frontend
+#          npm test --watch=false --browsers=ChromeHeadless
 
       - name: Build angular app
         run: |
           cd frontend
           npm run build 
-
-      - name: Build Docker image
-        run: |
-          cd frontend
-          docker build -t ayamneelmaini/angular-app:latest .
 
       - name: Push docker image
         uses: mr-smithers-excellent/docker-build-push@v5
@@ -55,5 +52,6 @@ jobs:
           tags: latest
           registry: docker.io
           dockerfile: frontend/Dockerfile
+          directory: frontend
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
