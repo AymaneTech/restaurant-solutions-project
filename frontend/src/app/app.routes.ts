@@ -8,7 +8,7 @@ export const routes: Routes = [
     children: [
       {
         path: 'categories',
-        loadComponent: () => import('./features/categories/categories-list/categories-list.component')
+        loadComponent: () => import('./features/categories/pages/categories-list/categories-list.component')
           .then(c => c.CategoriesListComponent)
       }
     ]

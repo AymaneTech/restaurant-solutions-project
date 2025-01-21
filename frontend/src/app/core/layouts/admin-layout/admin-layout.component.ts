@@ -8,7 +8,7 @@ import {AdminFooterComponent} from '../../components/admin-footer/admin-footer.c
   imports: [RouterOutlet, AdminHeaderComponent, AdminFooterComponent],
   template: `
    <app-admin-header></app-admin-header>
-    <main class="min-h-[80vh] bg-neutral-800 p-6">
+    <main class="">
       <router-outlet></router-outlet>
     </main>
     <app-admin-footer></app-admin-footer>
