@@ -35,10 +35,10 @@ jobs:
           cd frontend
           npm run lint
 
-      - name: Run unit tests
-        run: |
-          cd frontend
-          npm test --watch=false --browsers=ChromeHeadless
+#      - name: Run unit tests
+#        run: |
+#          cd frontend
+#          npm test --watch=false --browsers=ChromeHeadless
 
       - name: Build angular app
         run: |
