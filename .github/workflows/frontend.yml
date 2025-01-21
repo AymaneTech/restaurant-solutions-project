@@ -1,0 +1,15 @@
+name: Restaurant solutions project
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths:
+      "frontend/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: test
+        run: echo "hello motherfuckers"
