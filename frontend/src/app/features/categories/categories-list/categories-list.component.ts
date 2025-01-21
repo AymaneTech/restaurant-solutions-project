@@ -7,9 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './categories-list.component.css'
 })
 export class CategoriesListComponent {
-  constructor() {
-    console.log("hello ");
-
-  }
 
 }

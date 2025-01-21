@@ -3,12 +3,12 @@ import { AdminLayoutComponent } from './core/layouts/admin-layout/admin-layout.c
 
 export const routes: Routes = [
   {
-    path: "dashboard",
+    path: 'dashboard',
     component: AdminLayoutComponent,
     children: [
       {
-        path: "categories",
-        loadComponent: () => import("./features/categories/categories-list/categories-list.component")
+        path: 'categories',
+        loadComponent: () => import('./features/categories/categories-list/categories-list.component')
           .then(c => c.CategoriesListComponent)
       }
     ]
