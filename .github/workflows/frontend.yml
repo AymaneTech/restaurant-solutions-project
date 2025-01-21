@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [ main ]
     paths:
-      "frontend/**"
+      - "frontend/**"
 
 jobs:
   build:
@@ -26,16 +26,16 @@ jobs:
 
       - name: Run linting
         run: |
-            cd frontend
-            npm run lint
+          cd frontend
+          npm run lint
 
       - name: Run unit tests
         run: |
-           cd frontend
+          cd frontend
           npm test --watch=false --browsers=ChromeHeadless
 
       - name: Build angular app
-        run: | 
+        run: |
           cd frontend
           npm run build 
 
