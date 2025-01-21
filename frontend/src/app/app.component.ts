@@ -12,5 +12,6 @@ export class AppComponent {
 
   constructor() {
     console.log("hello world");
+    console.log("test to yassir")
   }
 }
