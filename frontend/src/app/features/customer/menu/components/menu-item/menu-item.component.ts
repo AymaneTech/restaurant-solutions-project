@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-menu-item',
   imports: [],
   templateUrl: './menu-item.component.html',
+  standalone: true,
   styleUrl: './menu-item.component.css'
 })
 export class MenuItemComponent {
