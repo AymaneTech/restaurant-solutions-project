@@ -10,14 +10,16 @@ import {AdminSidebarComponent} from '../components/admin/admin-sidebar/admin-sid
   standalone: true,
   template: `
     <div class="min-h-screen flex flex-col">
-      <app-admin-header></app-admin-header>
+      <app-admin-header class="bg-amber-50 text-white shadow-md"></app-admin-header>
       <div class="flex flex-grow">
-        <app-admin-sidebar></app-admin-sidebar>
-        <main class="flex-grow">
+        <app-admin-sidebar class="bg-amber-50 w-64 shadow-md"></app-admin-sidebar>
+
+        <main class="flex-grow bg-amber-50 p-16">
           <router-outlet></router-outlet>
         </main>
       </div>
-      <app-admin-footer></app-admin-footer>
+
+      <app-admin-footer class="bg-amber-600 text-white shadow-md"></app-admin-footer>
     </div>
   `,
 })

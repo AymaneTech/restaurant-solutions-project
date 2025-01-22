@@ -1,3 +1,8 @@
 export interface CategoryModel {
-  id: string;
+  id: number;
+  name: string;
+  itemCount: number;
+  status: 'active' | 'inactive';
+  description: string;
+  imageUrl: string;
 }

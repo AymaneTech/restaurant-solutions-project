@@ -1,29 +1,16 @@
-<aside
-  class="fixed top-0 left-0 h-full w-72 bg-amber-50 shadow-lg font-merriweather"
->
-
+<aside class="fixed top-20 left-0 h-[calc(100%-30px)] w-64 bg-amber-50 shadow-2xl shadow-amber-300/50 font-merriweather">
   <nav class="p-4">
     <ul class="space-y-2">
       <li>
-        <a
-          href="#"
-          class="flex items-center p-3 text-amber-900 hover:bg-amber-100 rounded-lg group transition-colors"
-        >
-          <i
-            class="fas fa-home w-6 text-amber-600 group-hover:text-amber-700"
-          ></i>
+        <a href="#" class="flex items-center p-3 text-amber-900 hover:bg-amber-100 rounded-lg group transition-colors">
+          <i class="fas fa-home w-6 text-amber-600 group-hover:text-amber-700"></i>
           <span class="ml-3">Dashboard</span>
         </a>
       </li>
 
       <li>
-        <a
-          href="#"
-          class="flex items-center p-3 text-amber-900 hover:bg-amber-100 rounded-lg group transition-colors"
-        >
-          <i
-            class="fas fa-calendar-alt w-6 text-amber-600 group-hover:text-amber-700"
-          ></i>
+        <a href="#" class="flex items-center p-3 text-amber-900 hover:bg-amber-100 rounded-lg group transition-colors">
+          <i class="fas fa-calendar-alt w-6 text-amber-600 group-hover:text-amber-700"></i>
           <span class="ml-3">Reservations</span>
         </a>
       </li>
@@ -31,34 +18,26 @@
       <li>
         <div
           (click)="isMenuOpen = !isMenuOpen"
-          (keydown)="isMenuOpen = !isMenuOpen"
+          (keydown.enter)="isMenuOpen = !isMenuOpen"
           tabindex="0"
           class="flex items-center p-3 text-amber-900 hover:bg-amber-100 rounded-lg group transition-colors cursor-pointer"
         >
           <i class="fas fa-utensils w-6 text-amber-600 group-hover:text-amber-700"></i>
           <span class="ml-3">Menu</span>
-          <i
-            class="fas fa-chevron-down ml-auto transform transition-transform duration-200"
-            [class.rotate-180]="isMenuOpen"
-          ></i>
+          <i class="fas fa-chevron-down ml-auto transform transition-transform duration-200"
+             [class.rotate-180]="isMenuOpen"></i>
         </div>
 
         @if (isMenuOpen) {
           <ul class="ml-8 mt-2 space-y-2">
             <li>
-              <a
-                class="flex items-center p-2 text-amber-900 hover:bg-amber-100 rounded-lg group transition-colors"
-              >
+              <a class="flex items-center p-2 text-amber-900 hover:bg-amber-100 rounded-lg group transition-colors">
                 <i class="fas fa-book-open w-5 text-amber-600 group-hover:text-amber-700"></i>
                 <span class="ml-3">Recipes</span>
               </a>
             </li>
-          </ul>
-          <ul class="ml-8 mt-2 space-y-2">
             <li>
-              <a
-                class="flex items-center p-2 text-amber-900 hover:bg-amber-100 rounded-lg group transition-colors"
-              >
+              <a class="flex items-center p-2 text-amber-900 hover:bg-amber-100 rounded-lg group transition-colors">
                 <i class="fas fa-tags w-5 text-amber-600 group-hover:text-amber-700"></i>
                 <span class="ml-3">Categories</span>
               </a>
@@ -68,48 +47,31 @@
       </li>
 
       <li>
-        <a
-          href="#"
-          class="flex items-center p-3 text-amber-900 hover:bg-amber-100 rounded-lg group transition-colors"
-        >
-          <i
-            class="fas fa-receipt w-6 text-amber-600 group-hover:text-amber-700"
-          ></i>
+        <a href="#" class="flex items-center p-3 text-amber-900 hover:bg-amber-100 rounded-lg group transition-colors">
+          <i class="fas fa-receipt w-6 text-amber-600 group-hover:text-amber-700"></i>
           <span class="ml-3">Orders</span>
         </a>
       </li>
 
       <li>
-        <a
-          href="#"
-          class="flex items-center p-3 text-amber-900 hover:bg-amber-100 rounded-lg group transition-colors"
-        >
-          <i
-            class="fas fa-users w-6 text-amber-600 group-hover:text-amber-700"
-          ></i>
+        <a href="#" class="flex items-center p-3 text-amber-900 hover:bg-amber-100 rounded-lg group transition-colors">
+          <i class="fas fa-users w-6 text-amber-600 group-hover:text-amber-700"></i>
           <span class="ml-3">Staff</span>
         </a>
       </li>
 
       <li>
-        <a
-          href="#"
-          class="flex items-center p-3 text-amber-900 hover:bg-amber-100 rounded-lg group transition-colors"
-        >
-          <i
-            class="fas fa-cog w-6 text-amber-600 group-hover:text-amber-700"
-          ></i>
+        <a href="#" class="flex items-center p-3 text-amber-900 hover:bg-amber-100 rounded-lg group transition-colors">
+          <i class="fas fa-cog w-6 text-amber-600 group-hover:text-amber-700"></i>
           <span class="ml-3">Settings</span>
         </a>
       </li>
     </ul>
   </nav>
 
-  <div class="absolute bottom-0 left-0 right-0 p-6 bg-amber-100">
+  <div class="absolute bottom-10 left-0 right-0 p-6 bg-amber-100 shadow-inner shadow-amber-400/30">
     <div class="flex items-center space-x-3">
-      <div
-        class="w-10 h-10 rounded-full bg-amber-600 flex items-center justify-center"
-      >
+      <div class="w-10 h-10 rounded-full bg-amber-600 flex items-center justify-center">
         <i class="fas fa-user text-white"></i>
       </div>
       <div>
