@@ -6,6 +6,4 @@ import { Component } from '@angular/core';
   imports: [],
   templateUrl: './admin-header.component.html',
 })
-export class AdminHeaderComponent {
-
-}
+export class AdminHeaderComponent {}
