@@ -11,6 +11,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      DB_URL_1: jdbc:postgresql://db:5433/prod_db
+      DB_URL: jdbc:postgresql://localhost:5433/prod_db
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: password
+      POSTGRES_PORT: 5433
+      POSTGRES_DB: prod_db
+      APP_PORT: 8081
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
