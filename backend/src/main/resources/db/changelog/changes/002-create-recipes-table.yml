@@ -1,0 +1,51 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: Aymane El Maini
+      changes:
+        - createTable:
+            tableName: recipes
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: description
+                  type: varchar(500)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: image
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: available
+                  type: boolean
+                  constraints:
+                    nullable: false
+                  defaultValue: "true"
+              - column:
+                  name: category_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+
+        - addForeignKeyConstraint:
+            baseTableName: recipes
+            baseColumnNames: category_id
+            referencedTableName: categories
+            referencedColumnNames: id
+            constraintName: fk_category_id
+            onDelete: CASCADE
+            onUpdate: CASCADE
