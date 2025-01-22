@@ -11,5 +11,5 @@ import {RouterLink} from '@angular/router';
   styleUrl: './admin-sidebar.component.css'
 })
 export class AdminSidebarComponent {
-
+  isMenuOpen = false;
 }
