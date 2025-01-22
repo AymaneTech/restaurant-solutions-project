@@ -20,6 +20,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
+
       - name: Setup maven dependencies caching
         uses: actions/cache@v3
         with:
@@ -37,10 +38,14 @@ jobs:
           timeout 30s bash -c 'until pg_isready -h localhost -p 5433; do sleep 1; done'
 
       - name: Run unit/integration test
-        run: mvn verify
+        run: |
+          cd backend
+          mvn verify
 
       - name: Shut down docker
-        run: docker compose down
+        run: |
+          cd backend
+          docker compose down
 
       - name: Build & push Docker image
         uses: mr-smithers-excellent/docker-build-push@v5
@@ -49,6 +54,7 @@ jobs:
           tags: latest
           registry: docker.io
           dockerfile: backend/Dockerfile
+          directory: backend
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
