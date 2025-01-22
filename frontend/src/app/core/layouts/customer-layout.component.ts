@@ -1,22 +1,26 @@
 import {Component} from '@angular/core';
-import {AdminFooterComponent} from '../components/admin/admin-footer/admin-footer.component';
-import {AdminHeaderComponent} from '../components/admin/admin-header/admin-header.component';
 import {RouterOutlet} from '@angular/router';
+import {CustomerHeaderComponent} from '../components/customer/customer-header/customer-header.component';
+import {CustomerFooterComponent} from '../components/customer/customer-footer/customer-footer.component';
 
 @Component({
   selector: 'app-customer-layout',
   imports: [
-    AdminFooterComponent,
-    AdminHeaderComponent,
-    RouterOutlet
+    RouterOutlet,
+    CustomerHeaderComponent,
+    CustomerFooterComponent
   ],
   standalone: true,
   template: `
-    <app-admin-header></app-admin-header>
-    <main class="">
-      <router-outlet></router-outlet>
-    </main>
-    <app-admin-footer></app-admin-footer>
+    <div class="min-h-screen flex flex-col">
+      <app-customer-header class="fixed top-0 w-full z-50"></app-customer-header>
+
+      <main class="flex-grow mt-16 pb-4">
+        <router-outlet></router-outlet>
+      </main>
+
+      <app-customer-footer></app-customer-footer>
+    </div>
   `
 })
 export class CustomerLayoutComponent {
