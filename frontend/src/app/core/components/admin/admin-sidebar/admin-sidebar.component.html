@@ -31,6 +31,8 @@
       <li>
         <div
           (click)="isMenuOpen = !isMenuOpen"
+          (keydown)="isMenuOpen = !isMenuOpen"
+          tabindex="0"
           class="flex items-center p-3 text-amber-900 hover:bg-amber-100 rounded-lg group transition-colors cursor-pointer"
         >
           <i class="fas fa-utensils w-6 text-amber-600 group-hover:text-amber-700"></i>
