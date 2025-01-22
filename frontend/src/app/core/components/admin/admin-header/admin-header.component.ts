@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-admin-header',
   standalone: true,
   imports: [],
-  standalone: true,
   templateUrl: './admin-header.component.html',
 })
 export class AdminHeaderComponent {}

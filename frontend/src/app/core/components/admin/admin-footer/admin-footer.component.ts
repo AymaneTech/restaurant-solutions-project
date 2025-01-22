@@ -6,6 +6,5 @@ import { Component } from '@angular/core';
   imports: [],
   templateUrl: './admin-footer.component.html',
   styleUrl: './admin-footer.component.css',
-  standalone: true
 })
 export class AdminFooterComponent {}

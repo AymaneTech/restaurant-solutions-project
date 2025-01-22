@@ -25,7 +25,7 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./features/admin/categories/pages/categories-list/categories-list.component')
             .then(c => c.CategoriesListComponent)
-      }
+      },
     ]
   }
 ];
