@@ -23,9 +23,9 @@ export const routes: Routes = [
       {
         path: '',
         loadComponent: () =>
-          import('./features/admin/categories/pages/categories-list/categories-list.component')
-            .then(c => c.CategoriesListComponent)
-      },
+          import('./features/customer/home/home.component')
+            .then(c => c.HomeComponent)
+      }
     ]
   }
 ];
