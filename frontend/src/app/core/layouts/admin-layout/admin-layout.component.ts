@@ -5,6 +5,7 @@ import {AdminFooterComponent} from '../../components/admin-footer/admin-footer.c
 
 @Component({
   selector: 'app-admin-layout',
+  standalone: true,
   imports: [RouterOutlet, AdminHeaderComponent, AdminFooterComponent],
   template: `
    <app-admin-header></app-admin-header>
