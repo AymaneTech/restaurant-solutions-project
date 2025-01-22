@@ -1,4 +1,3 @@
-
 <div class="mx-auto bg-gray-900 min-h-screen">
   <button class="flex items-center p-3 transition-transform transform hover:-translate-x-2">
     <img src="https://img.icons8.com/?size=100&id=26191&format=png&color=FFFFFF"
@@ -9,9 +8,9 @@
   </button>
 
   <div class="px-2">
-    <app-menu-section />
-    <app-menu-section />
-    <app-menu-section />
-    <app-menu-section />
+    @for (category of categories; track category.id) {
+      <app-menu-section [category]="category"/>
+
+    }
   </div>
 </div>
