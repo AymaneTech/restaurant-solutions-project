@@ -23,8 +23,8 @@ export const routes: Routes = [
       {
         path: '',
         loadComponent: () =>
-          import('./features/customer/hero/hero.component')
-            .then(c => c.HeroComponent)
+          import('./features/customer/home/home.component')
+            .then(c => c.HomeComponent)
       }
     ]
   }

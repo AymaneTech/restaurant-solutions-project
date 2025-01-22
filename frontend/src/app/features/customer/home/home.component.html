@@ -27,7 +27,7 @@
           </div>
           <div class="md:w-2/3 relative h-64 overflow-hidden">
             <div class="flex transition-transform duration-700 ease-in-out"
-                 [style.transform]="'translateX(-' + currentImageIndex1 * 100 + '%)'">
+                 [style.transform]="'translateX(-' + currentImageIndex * 100 + '%)'">
               @for (image of images1; track image; let i = $index) {
                 <img [src]="image"
                      [alt]="'Excellence ' + (i + 1)"
@@ -46,7 +46,7 @@
           </div>
           <div class="md:w-2/3 relative h-64 overflow-hidden">
             <div class="flex transition-transform duration-700 ease-in-out"
-                 [style.transform]="'translateX(-' + currentImageIndex2 * 100 + '%)'">
+                 [style.transform]="'translateX(-' + currentImageIndex * 100 + '%)'">
               @for (image of images2; track image; let i = $index) {
                 <img [src]="image"
                      [alt]="'Michelin ' + (i + 1)"
@@ -65,7 +65,7 @@
           </div>
           <div class="md:w-2/3 relative h-64 overflow-hidden">
             <div class="flex transition-transform duration-700 ease-in-out"
-                 [style.transform]="'translateX(-' + currentImageIndex3 * 100 + '%)'">
+                 [style.transform]="'translateX(-' + currentImageIndex * 100 + '%)'">
               @for (image of images3; track image; let i = $index) {
                 <img [src]="image"
                      [alt]="'Farm Fresh ' + (i + 1)"
