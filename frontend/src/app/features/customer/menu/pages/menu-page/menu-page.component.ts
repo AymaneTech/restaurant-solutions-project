@@ -1,5 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MenuSectionComponent} from '../../components/menu-section/menu-section.component';
+import {MenuCategory} from '../../menu.model';
+import {MenuService} from '../../menu.service';
 
 @Component({
   selector: 'app-menu-page',
@@ -10,6 +12,19 @@ import {MenuSectionComponent} from '../../components/menu-section/menu-section.c
   standalone: true,
   styleUrl: './menu-page.component.css'
 })
-export class MenuPageComponent {
+export class MenuPageComponent implements OnInit {
+  protected categories!: MenuCategory[];
+
+  constructor(private readonly menuService: MenuService) {
+  }
+
+  ngOnInit() {
+    this.loadCategories();
+  }
+
+  loadCategories() {
+    return this.menuService.getMenuCategories()
+      .subscribe((categories) => this.categories = categories);
+  }
 
 }
