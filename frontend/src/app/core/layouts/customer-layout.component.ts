@@ -12,14 +12,10 @@ import {CustomerFooterComponent} from '../components/customer/customer-footer/cu
   ],
   standalone: true,
   template: `
-    <div class="min-h-screen flex flex-col">
-      <app-customer-header class="fixed top-0 w-full z-50"></app-customer-header>
-
-      <main class="flex-grow mt-16 pb-4">
-        <router-outlet></router-outlet>
-      </main>
-
-      <app-customer-footer></app-customer-footer>
+    <div class="bg-amber-50">
+      <app-customer-header class=""></app-customer-header>
+      <router-outlet></router-outlet>
+      <app-customer-footer class=""></app-customer-footer>
     </div>
   `
 })

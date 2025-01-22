@@ -23,8 +23,8 @@ export const routes: Routes = [
       {
         path: '',
         loadComponent: () =>
-          import('./features/admin/categories/pages/categories-list/categories-list.component')
-            .then(c => c.CategoriesListComponent)
+          import('./features/customer/hero/hero.component')
+            .then(c => c.HeroComponent)
       }
     ]
   }
