@@ -1,0 +1,72 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: Aymane El Maini
+      changes:
+
+        - sql:
+            sql: "CREATE TYPE order_status AS ENUM ('PENDING', 'IN_PROGRESS', 'COOKED', 'SERVED', 'CANCELLED')"
+
+        - createTable:
+            tableName: orders
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: table_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: order_date
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: order_status
+                  constraints:
+                    nullable: false
+              - column:
+                  name: estimated_cooking_time
+                  type: integer
+                  constraints:
+                    nullable: true
+
+
+        - createTable:
+            tableName: order_items
+            columns:
+              - column:
+                  name: recipe_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: order_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+
+        - addForeignKeyConstraint:
+            baseTableName: order_items
+            baseColumnNames: order_id
+            referencedTableName: orders
+            referencedColumnNames: id
+            constraintName: fk_order_items_order_id
+            onDelete: CASCADE
+            onUpdate: CASCADE
+
+        - addForeignKeyConstraint:
+            baseTableName: order_items
+            baseColumnNames: recipe_id
+            referencedTableName: recipes
+            referencedColumnNames: id
+            constraintName: fk_order_items_recipe_id
+            onDelete: CASCADE
+            onUpdate: CASCADE

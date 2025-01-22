@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: 4
+      author: Aymane El Maini
+      changes:
+        - preConditions:
+            - onFail: MARK_RAN
+            - rowCount:
+                tableName: categories
+                expectedRows: 0
+            - rowCount:
+                tableName: recipes
+                expectedRows: 0
+            - rowCount:
+                tableName: orders
+                expectedRows: 0
+            - rowCount:
+                tableName: order_items
+                expectedRows: 0
+        - sqlFile:
+            path: ../data/insert-dummy-data.sql
+            relativeToChangelogFile: true
