@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Recipe} from '../../menu.model';
 
 @Component({
   selector: 'app-menu-item',
   imports: [],
   templateUrl: './menu-item.component.html',
-  styleUrl: './menu-item.component.css'
+  standalone: true,
 })
 export class MenuItemComponent {
+  @Input() recipe!: Recipe;
 
 }
