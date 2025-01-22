@@ -17,3 +17,4 @@ import { ItemDetailsComponent } from './features/customer/menu/components/item-d
 export class AppComponent {
   title = 'frontend';
 }
+
