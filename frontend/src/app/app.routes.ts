@@ -8,9 +8,11 @@ export const routes: Routes = [
     children: [
       {
         path: 'categories',
-        loadComponent: () => import('./features/categories/pages/categories-list/categories-list.component')
-          .then(c => c.CategoriesListComponent)
-      }
-    ]
-  }
+        loadComponent: () =>
+          import(
+            './features/categories/pages/categories-list/categories-list.component'
+          ).then((c) => c.CategoriesListComponent),
+      },
+    ],
+  },
 ];

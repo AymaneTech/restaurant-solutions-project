@@ -1,3 +1,3 @@
 export interface CategoryModel {
-  id: string
+  id: string;
 }

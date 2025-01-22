@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-admin-footer',
   imports: [],
   templateUrl: './admin-footer.component.html',
-  styleUrl: './admin-footer.component.css'
+  styleUrl: './admin-footer.component.css',
 })
-export class AdminFooterComponent {
-
-}
+export class AdminFooterComponent {}
