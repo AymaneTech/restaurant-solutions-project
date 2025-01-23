@@ -1,7 +1,7 @@
 package com.wora.restaurant.menu.application.service.impl;
 
 import com.wora.restaurant.common.exception.ResourceNotFoundException;
-import com.wora.restaurant.config.annotation.ApplicationService;
+import com.wora.restaurant.common.application.ApplicationService;
 import com.wora.restaurant.menu.application.dto.request.CategoryRequestDto;
 import com.wora.restaurant.menu.application.dto.response.CategoryResponseDto;
 import com.wora.restaurant.menu.application.mapper.CategoryMapper;

@@ -1,6 +1,6 @@
 package com.wora.restaurant.menu.application.service.impl;
 
-import com.wora.restaurant.config.annotation.ApplicationService;
+import com.wora.restaurant.common.application.ApplicationService;
 import com.wora.restaurant.menu.application.dto.request.RecipeRequestDto;
 import com.wora.restaurant.menu.application.dto.response.RecipeResponseDto;
 import com.wora.restaurant.menu.application.service.RecipeService;
