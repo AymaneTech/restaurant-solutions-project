@@ -12,9 +12,13 @@ public interface RecipeService {
 
     RecipeResponseDto updateRecipe(RecipeId id, RecipeRequestDto dto);
 
+    void toggleRecipeAvailability(RecipeId id);
+
     List<RecipeResponseDto> getAllRecipes();
 
     RecipeResponseDto getRecipeById(RecipeId id);
 
     void deleteRecipe(RecipeId id);
+
+    List<RecipeResponseDto> getAvailableRecipes();
 }

@@ -18,8 +18,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class DefaultCategoryService implements CategoryService {
     private final CategoryRepository repository;
-    private final FileUploader fileUploader;
     private final CategoryMapper mapper;
+    private final FileUploader fileUploader;
 
     @Override
     public CategoryResponseDto createCategory(CategoryRequestDto dto) {
@@ -36,8 +36,8 @@ public class DefaultCategoryService implements CategoryService {
                 .orElseThrow(() -> new ResourceNotFoundException("Category", id.value()));
 
         final String imageUrl = fileUploader.upload(dto.image());
-        category.image(imageUrl)
-                .name(dto.name());
+        category.setImage(imageUrl)
+                .setName(dto.name());
 
         Category savedCategory = repository.save(category);
         return mapper.toResponseDto(savedCategory);
@@ -63,5 +63,11 @@ public class DefaultCategoryService implements CategoryService {
             throw new ResourceNotFoundException("Category", id.value());
 
         repository.deleteById(id);
+    }
+
+    @Override
+    public Category findEntityById(CategoryId id) {
+        return repository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Category", id.value()));
     }
 }

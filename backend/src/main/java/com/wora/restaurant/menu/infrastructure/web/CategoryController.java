@@ -5,7 +5,6 @@ import com.wora.restaurant.menu.application.dto.response.CategoryResponseDto;
 import com.wora.restaurant.menu.application.service.CategoryService;
 import com.wora.restaurant.menu.domain.vo.CategoryId;
 import jakarta.validation.Valid;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
