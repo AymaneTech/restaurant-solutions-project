@@ -2,7 +2,7 @@
   <nav class="p-4">
     <ul class="space-y-2">
       <li>
-        <a href="#" class="flex items-center p-3 text-amber-900 hover:bg-amber-100 rounded-lg group transition-colors">
+        <a routerLink="/dashboard" class="flex items-center p-3 text-amber-900 hover:bg-amber-100 rounded-lg group transition-colors">
           <i class="fas fa-home w-6 text-amber-600 group-hover:text-amber-700"></i>
           <span class="ml-3">Dashboard</span>
         </a>
@@ -31,13 +31,18 @@
         @if (isMenuOpen) {
           <ul class="ml-8 mt-2 space-y-2">
             <li>
-              <a class="flex items-center p-2 text-amber-900 hover:bg-amber-100 rounded-lg group transition-colors">
+              <a
+                class="flex items-center p-2 text-amber-900 hover:bg-amber-100 rounded-lg group transition-colors"
+              >
                 <i class="fas fa-book-open w-5 text-amber-600 group-hover:text-amber-700"></i>
                 <span class="ml-3">Recipes</span>
               </a>
             </li>
             <li>
-              <a class="flex items-center p-2 text-amber-900 hover:bg-amber-100 rounded-lg group transition-colors">
+              <a
+                routerLink="/dashboard/categories"
+                class="flex items-center p-2 text-amber-900 hover:bg-amber-100 rounded-lg group transition-colors"
+              >
                 <i class="fas fa-tags w-5 text-amber-600 group-hover:text-amber-700"></i>
                 <span class="ml-3">Categories</span>
               </a>

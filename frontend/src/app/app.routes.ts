@@ -8,6 +8,13 @@ export const routes: Routes =[
     component: AdminLayoutComponent,
     children: [
       {
+        path: '',
+        loadComponent: () =>
+          import(
+            './features/admin/dashboard/pages/dashboard-overview/dashboard-overview.component'
+            ).then((c) => c.DashboardOverviewComponent),
+      },
+      {
         path: 'categories',
         loadComponent: () =>
           import(
