@@ -21,6 +21,13 @@ export const routes: Routes =[
             './features/admin/categories/pages/categories-list/categories-list.component'
             ).then((c) => c.CategoriesListComponent),
       },
+      {
+        path: 'recipes',
+        loadComponent: () =>
+        import(
+          './features/admin/recipes/pages/recipes-list/recipes-list.component'
+        ).then((c) => c.RecipesListComponent),
+      }
     ],
   },
   {

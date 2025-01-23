@@ -1,0 +1,14 @@
+<div class="bg-amber-50 p-6 space-y-4">
+
+  <div class="flex justify-between items-center  pb-4">
+    <h2 class="text-2xl font-merriweather text-amber-900">Restaurant Recipes</h2>
+    <button class="bg-amber-600 text-white font-merriweather px-4 py-2 rounded-lg hover:bg-amber-700 transition-colors">
+      Add Recipe
+    </button>
+  </div>
+
+  @for (recipe of recipes; track recipe.id) {
+    <app-recipes-item [recipe]="recipe"></app-recipes-item>
+  }
+
+</div>
