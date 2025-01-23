@@ -45,7 +45,7 @@ public class DefaultRecipeService implements RecipeService {
         final Category category = categoryService.findEntityById(CategoryId.of(dto.categoryId()));
         final String image = fileUploader.upload(dto.image());
 
-        mapper.updateEntity(recipe, dto);
+        mapper.updateRecipe(recipe, dto);
         recipe.setImage(image)
                 .setCategory(category);
 
@@ -87,5 +87,11 @@ public class DefaultRecipeService implements RecipeService {
         return repository.findAllByAvailableTrue()
                 .stream().map(mapper::toResponseDto)
                 .toList();
+    }
+
+    @Override
+    public Recipe getEntityById(RecipeId id) {
+        return repository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Recipe", id.value()));
     }
 }

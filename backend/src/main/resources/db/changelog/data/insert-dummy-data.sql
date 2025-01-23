@@ -15,7 +15,7 @@ VALUES (1, 5, '2023-10-01 12:00:00', 'PENDING', 20),
        (2, 6, '2023-10-01 12:05:00', 'IN_PROGRESS', 15);
 
 
-INSERT INTO order_items (recipe_id, order_id)
-VALUES (1, 1),
-       (2, 1),
-       (3, 2);
+INSERT INTO order_items (recipe_id, order_id, quantity)
+VALUES (1, 1, 1),
+       (2, 1, 38),
+       (3, 2, 29);

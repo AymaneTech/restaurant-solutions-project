@@ -10,6 +10,8 @@ spring:
     show-sql: true
     properties:
       dialect: org.hibernate.dialect.PostgreSQLDialect
+      hibernate:
+        format_sql: true
   liquibase:
     change-log: classpath:/db/changelog/db.changelog-master.yaml
   servlet:
