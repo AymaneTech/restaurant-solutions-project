@@ -16,23 +16,16 @@ spring:
     multipart:
       enabled: true
 
-server:
-  port: 8083
-
 app:
   open-api:
     server:
       url: http://localhost:8081
-      description: API for User management, roles, authorities, and authentication using Spring Security.
+      description: API for restaurant management solutions
     info:
-      title: User Management Service API
+      title: Restaurant management solutions
       version: 1.0.0
       description: |
-        This API provides functionalities to manage:
-        - **User Management**: CRUD operations for users, including registration and profile management.
-        - **Role Management**: Assign and manage roles for users.
-        - **Authority Management**: Manage the authorities (permissions) associated with roles.
-        - **Authentication**: Secure user authentication using Spring Security, including JWT token generation and validation.
+        still need to provide desription for this
       contact:
         name: Aymane El Maini
         email: elmainiaymane03@gmail.com
