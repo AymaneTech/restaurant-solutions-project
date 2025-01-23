@@ -1,30 +1,19 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { ItemDetailsComponent } from '../item-details/item-details.component';
 import { CommonModule } from '@angular/common'; // Importer CommonModule
-import { trigger, transition, style, animate } from '@angular/animations';
-
+import { Component, Input } from '@angular/core';
+import { Recipe } from '../../menu.model';
+import { ItemDetailsComponent } from '../item-details/item-details.component';
 
 @Component({
   selector: 'app-menu-item',
-  imports: [CommonModule,RouterLink,ItemDetailsComponent],
-  templateUrl: './menu-item.component.html',
-  animations: [
-    trigger('popupAnimation', [
-      transition('void => *', [
-        style({ opacity: 0, transform: 'scale(0.8)' }), // L'élément commence plus petit et transparent
-        animate('300ms ease-out', style({ opacity: 1, transform: 'scale(1)' })), // Animation pour afficher l'élément
-      ]),
-      transition('* => void', [
-        animate('300ms ease-in', style({ opacity: 0, transform: 'scale(0.8)' })), // Animation pour fermer l'élément
-      ]),
-    ]),
-  ],
+  imports: [CommonModule, ItemDetailsComponent],
+  // import { Recipe } from './../../menu.model';
+templateUrl: './menu-item.component.html',
+
 })
 export class MenuItemComponent {
-  showPopup = false; 
-
-  openPopup() {
+  @Input() recipe!: Recipe;
+  showPopup = false;
+  openPopup(): void {    
     this.showPopup = true;
   }
 

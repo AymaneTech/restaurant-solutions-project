@@ -1,25 +1,23 @@
-<div class="  flex items-center justify-center p-2">
-    <div class="bg-white rounded-lg shadow-lg max-w-2xl w-full">
-      <!-- Image du plat -->
-      <img
-        src="https://imgs.search.brave.com/U-hWe4pS0aQTwhnc9IZj3bnodKjHRy6PuLzaZoGRq3E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTg0/OTQ2NzAxL3Bob3Rv/L3BpenphLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz05N3Jj/MFZJaS1zM21uNHhl/NHhEeTlTLVhKX09o/Ym45MlhhRU1haUlE/X2VZPQ"
-        alt="Dish Image"
-        class="w-full h-64 object-cover rounded-t-lg"
-      />
-      <!-- Contenu -->
-      <div class="p-6">
-        <h1 class="text-3xl font-bold text-gray-800">Pasta Carbonara</h1>
-        <p class="text-gray-600 mt-2">
-          A classic Italian pasta dish made with eggs, cheese, pancetta, and black pepper. It's a creamy, delicious
-          comfort food that everyone loves.
-        </p>
-        <div class="mt-4 flex justify-between items-center">
-          <p class="text-lg font-semibold text-green-600">$12.99</p>
-          <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-            Order Now
-          </button>
-        </div>
+<div class="flex items-center justify-center p-2">
+  <div class="bg-white rounded-lg shadow-lg max-w-2xl w-full">
+    <!-- Image du plat -->
+    <img
+      [src]="recipe.image"
+      alt="Dish Image"
+      class="w-full h-64 object-cover rounded-t-lg"
+    />
+    <!-- Contenu -->
+    <div class="p-6">
+      <h1 class="text-3xl font-bold text-gray-800">{{ recipe.name }}</h1>
+      <p class="text-gray-600 mt-2">{{ recipe.description }}</p>
+      <div class="mt-4 flex justify-between items-center">
+        <p class="text-lg font-semibold text-green-600">{{ recipe.price }}</p>
+        <button
+          class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+        >
+          Order Now
+        </button>
       </div>
     </div>
   </div>
-  
+</div>

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { CommonModule } from '@angular/common'; // Utiliser CommonModule ici
+import { Recipe } from '../../menu.model';
 
 
 @Component({
@@ -8,6 +9,10 @@ import { CommonModule } from '@angular/common'; // Utiliser CommonModule ici
   templateUrl: './item-details.component.html',
   styleUrl: './item-details.component.css'
 })
-export class ItemDetailsComponent {
+export class ItemDetailsComponent implements OnChanges {
+  @Input() recipe!: Recipe;
 
+  ngOnChanges() {
+    console.log('Recipe received in ItemDetailsComponent:', this.recipe);
+  }
 }
