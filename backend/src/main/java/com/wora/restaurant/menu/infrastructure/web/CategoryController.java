@@ -5,6 +5,7 @@ import com.wora.restaurant.menu.application.dto.response.CategoryResponseDto;
 import com.wora.restaurant.menu.application.service.CategoryService;
 import com.wora.restaurant.menu.domain.vo.CategoryId;
 import jakarta.validation.Valid;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,7 +24,7 @@ public class CategoryController {
         return ResponseEntity.ok(service.getAllCategories());
     }
 
-    @PutMapping("/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<CategoryResponseDto> getCategoryById(@PathVariable Long id) {
         return ResponseEntity.ok(service.getCategoryById(CategoryId.of(id)));
     }
@@ -38,7 +39,7 @@ public class CategoryController {
 
     @PutMapping("/{id}")
     public ResponseEntity<CategoryResponseDto> updateCategory(@PathVariable Long id, @ModelAttribute @Valid CategoryRequestDto request) {
-        CategoryResponseDto category = service.updateCategory(id, request);
+        CategoryResponseDto category = service.updateCategory(CategoryId.of(id), request);
 
         return ResponseEntity.ok(category);
     }
