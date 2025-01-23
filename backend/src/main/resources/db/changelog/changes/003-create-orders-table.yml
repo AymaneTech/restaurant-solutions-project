@@ -13,10 +13,8 @@ databaseChangeLog:
               - column:
                   name: id
                   type: bigint
-                  autoIncrement: true
                   constraints:
                     primaryKey: true
-                    nullable: false
               - column:
                   name: table_id
                   type: bigint
@@ -70,3 +68,12 @@ databaseChangeLog:
             constraintName: fk_order_items_recipe_id
             onDelete: CASCADE
             onUpdate: CASCADE
+
+        - createSequence:
+            sequenceName: orders_seq
+            startValue: 1
+            incrementBy: 50
+            minValue: 1
+            maxValue: 999999999
+            cycle: false
+            cacheSize: 20

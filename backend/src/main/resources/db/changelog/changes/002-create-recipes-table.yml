@@ -9,10 +9,8 @@ databaseChangeLog:
               - column:
                   name: id
                   type: bigint
-                  autoIncrement: true
                   constraints:
                     primaryKey: true
-                    nullable: false
               - column:
                   name: name
                   type: varchar(255)
@@ -22,6 +20,11 @@ databaseChangeLog:
               - column:
                   name: description
                   type: varchar(500)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: decimal(10, 2)
                   constraints:
                     nullable: false
               - column:
@@ -49,3 +52,12 @@ databaseChangeLog:
             constraintName: fk_category_id
             onDelete: CASCADE
             onUpdate: CASCADE
+
+        - createSequence:
+            sequenceName: recipes_seq
+            startValue: 1
+            incrementBy: 50
+            minValue: 1
+            maxValue: 999999999
+            cycle: false
+            cacheSize: 20
