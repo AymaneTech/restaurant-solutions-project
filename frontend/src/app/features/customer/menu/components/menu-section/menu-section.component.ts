@@ -9,7 +9,6 @@ import {MenuCategory} from '../../menu.model';
   ],
   templateUrl: './menu-section.component.html',
   standalone: true,
-  styleUrl: './menu-section.component.css'
 })
 export class MenuSectionComponent {
   @Input() category!: MenuCategory;
