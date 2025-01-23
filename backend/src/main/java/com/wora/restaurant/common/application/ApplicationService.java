@@ -1,4 +1,4 @@
-package com.wora.restaurant.config.annotation;
+package com.wora.restaurant.common.application;
 
 
 import jakarta.transaction.Transactional;

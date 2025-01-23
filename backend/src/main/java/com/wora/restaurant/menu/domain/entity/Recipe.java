@@ -32,4 +32,8 @@ public class Recipe {
 
     @ManyToOne
     private Category category;
+
+    public void toggleAvailability() {
+        this.available = !this.available;
+    }
 }
