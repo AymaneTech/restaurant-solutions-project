@@ -4,10 +4,10 @@ VALUES (1, 'Appetizers', 'appetizers.jpg'),
        (3, 'Desserts', 'desserts.jpg');
 
 
-INSERT INTO recipes (id, name, description, image, available, category_id)
-VALUES (1, 'Caesar Salad', 'Classic Caesar salad with croutons and parmesan', 'caesar_salad.jpg', true, 1),
-       (2, 'Grilled Salmon', 'Fresh salmon grilled to perfection', 'grilled_salmon.jpg', true, 2),
-       (3, 'Chocolate Cake', 'Rich and moist chocolate cake', 'chocolate_cake.jpg', true, 3);
+INSERT INTO recipes (id, name, description, price, image, available, category_id)
+VALUES (1, 'Caesar Salad', 'Classic Caesar salad with croutons and parmesan', 23.33, 'caesar_salad.jpg', true, 1),
+       (2, 'Grilled Salmon', 'Fresh salmon grilled to perfection', 23.33, 'grilled_salmon.jpg', true, 2),
+       (3, 'Chocolate Cake', 'Rich and moist chocolate cake', 23.33, 'chocolate_cake.jpg', true, 3);
 
 
 INSERT INTO orders (id, table_id, order_date, status, estimated_cooking_time)

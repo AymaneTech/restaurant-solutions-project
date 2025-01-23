@@ -9,10 +9,8 @@ databaseChangeLog:
               - column:
                   name: id
                   type: bigint
-                  autoIncrement: true
                   constraints:
                     primaryKey: true
-                    nullable: false
               - column:
                   name: name
                   type: varchar(255)
@@ -24,3 +22,12 @@ databaseChangeLog:
                   type: varchar(255)
                   constraints:
                     nullable: false
+
+        - createSequence:
+            sequenceName: categories_seq
+            startValue: 1
+            incrementBy: 50
+            minValue: 1
+            maxValue: 999999999
+            cycle: false
+            cacheSize: 20

@@ -12,6 +12,9 @@ spring:
       dialect: org.hibernate.dialect.PostgreSQLDialect
   liquibase:
     change-log: classpath:/db/changelog/db.changelog-master.yaml
+  servlet:
+    multipart:
+      enabled: true
 
 server:
   port: 8083
@@ -34,3 +37,5 @@ app:
         name: Aymane El Maini
         email: elmainiaymane03@gmail.com
         url: https://aymaneelmaini.vercel.app
+  cloudinary:
+    url: ${CLOUDINARY_URL}
