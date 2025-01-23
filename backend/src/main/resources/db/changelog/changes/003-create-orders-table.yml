@@ -50,6 +50,11 @@ databaseChangeLog:
                   type: bigint
                   constraints:
                     nullable: false
+              - column:
+                  name: quantity
+                  type: integer
+                  constraints:
+                    nullable: false
 
         - addForeignKeyConstraint:
             baseTableName: order_items
@@ -77,3 +82,12 @@ databaseChangeLog:
             maxValue: 999999999
             cycle: false
             cacheSize: 20
+
+#        - createSequence:
+#            sequenceName: order_items_seq
+#            startValue: 1
+#            incrementBy: 50
+#            minValue: 1
+#            maxValue: 999999999
+#            cycle: false
+#            cacheSize: 20

@@ -2,6 +2,7 @@ package com.wora.restaurant.menu.application.service;
 
 import com.wora.restaurant.menu.application.dto.request.RecipeRequestDto;
 import com.wora.restaurant.menu.application.dto.response.RecipeResponseDto;
+import com.wora.restaurant.menu.domain.entity.Recipe;
 import com.wora.restaurant.menu.domain.vo.RecipeId;
 
 import java.util.List;
@@ -21,4 +22,6 @@ public interface RecipeService {
     void deleteRecipe(RecipeId id);
 
     List<RecipeResponseDto> getAvailableRecipes();
+
+    Recipe getEntityById(RecipeId id);
 }
