@@ -1,0 +1,23 @@
+<div class="flex items-center justify-center p-2">
+  <div class="bg-white rounded-lg shadow-lg max-w-2xl w-full">
+    <!-- Image du plat -->
+    <img
+      [src]="recipe.image"
+      alt="Dish Image"
+      class="w-full h-64 object-cover rounded-t-lg"
+    />
+    <!-- Contenu -->
+    <div class="p-6">
+      <h1 class="text-3xl font-bold text-gray-800">{{ recipe.name }}</h1>
+      <p class="text-gray-600 mt-2">{{ recipe.description }}</p>
+      <div class="mt-4 flex justify-between items-center">
+        <p class="text-lg font-semibold text-green-600">{{ recipe.price }}</p>
+        <button
+          class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+        >
+          Order Now
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
