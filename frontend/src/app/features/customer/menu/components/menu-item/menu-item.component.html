@@ -24,6 +24,7 @@
       </button>
       <button
         class="add-to-order w-1/4 mt-4 px-2 text-white rounded-lg text-sm focus:outline-none"
+        (click)="addToOrder()"
       >
         <img
           src="https://img.icons8.com/?size=100&id=rqA4tKvwPKoS&format=png&color=FAB005"
@@ -47,7 +48,6 @@
     >
       ✕
     </button>
-
     <!-- Contenu du composant ItemDetails -->
     <app-item-details [recipe]="recipe"></app-item-details>
   </div>

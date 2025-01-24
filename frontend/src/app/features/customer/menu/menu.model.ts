@@ -11,3 +11,12 @@ export  interface MenuCategory {
   name: string;
   recipes: Recipe[];
 }
+
+export interface OrderItem {
+  recipe: Recipe;
+  quantity: number;
+}
+
+export interface Order {
+  items: OrderItem[];
+}

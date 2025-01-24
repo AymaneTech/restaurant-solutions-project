@@ -1,0 +1,43 @@
+<div class="relative p-2 m-1 rounded-md bg-yellow-200 flex items-center justify-between">
+  <button class="absolute w-6 -top-1 -right-2"
+          (click)="removeItem()">
+    <img
+      src="https://img.icons8.com/?size=100&id=kMuUXZ7e8kfY&format=png&color=FF0000"
+      alt="cancel-icon"
+    />
+  </button>
+
+  <div class="flex items-center gap-6">
+    <img
+      [src]="item.recipe.image"
+      alt="plate-image"
+      class="w-[30%] rounded-[12px]"
+    />
+    <div class="flex flex-col items-center gap-2">
+      <h4 class="font-bold">{{ item.recipe.name }}</h4>
+      <div class="flex justify-evenly gap-1">
+        <button>
+          <img
+            src="https://img.icons8.com/?size=100&id=kMuUXZ7e8kfY&format=png&color=FAB005"
+            alt="minus-icon"
+            class="w-4"
+          />
+        </button>
+        <p class="text-center rounded-md px-2 bg-red-50">
+          {{ item.quantity }}
+        </p>
+        <button>
+          <img
+            src="https://img.icons8.com/?size=100&id=FnGQHvpuVbBr&format=png&color=FAB005"
+            alt="plus-icon"
+            class="w-4"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <p class="flex items-center justify-center font-medium text-sm bg-red-50 w-10 h-10 rounded-full p-1">
+    {{ item.recipe.price }}DH
+  </p>
+</div>
