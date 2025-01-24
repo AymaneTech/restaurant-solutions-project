@@ -7,3 +7,9 @@ export const addRecipeToOrders = createAction('[Orders] Add Recipe To Orders',
 export const removeOrderItem = createAction('[Orders] Remove Order Item',
     props<{ item: OrderItem }>());
 
+export const reduceOrderItemQuantity = createAction('[Orders] Reduce Quantity',
+  props<{itemId: number}>());
+
+export const addOrderItemQuantity = createAction('[Orders] Add Quantity',
+  props<{itemId: number}>());
+
