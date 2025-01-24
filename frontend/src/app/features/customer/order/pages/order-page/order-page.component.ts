@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component} from '@angular/core';
 import {OrderItemComponent} from '../../components/order-item/order-item.component';
 import {Recipe} from '../../../menu/menu.model';
 import {OrderService} from '../../order.service';
