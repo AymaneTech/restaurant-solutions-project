@@ -12,7 +12,7 @@ import {NgIf} from '@angular/common';
   templateUrl: './customer-header.component.html',
 })
 export class CustomerHeaderComponent {
-  showOrderPanel: boolean = false;
+  showOrderPanel = false;
 
   toggleOrderPanel(): void {
     this.showOrderPanel = !this.showOrderPanel;
