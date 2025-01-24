@@ -16,7 +16,7 @@
     <div class="flex flex-col items-center gap-2">
       <h4 class="font-bold">{{ item.recipe.name }}</h4>
       <div class="flex justify-evenly gap-1">
-        <button>
+        <button (click)="reduceQuantity()">
           <img
             src="https://img.icons8.com/?size=100&id=kMuUXZ7e8kfY&format=png&color=FAB005"
             alt="minus-icon"
@@ -26,7 +26,7 @@
         <p class="text-center rounded-md px-2 bg-red-50">
           {{ item.quantity }}
         </p>
-        <button>
+        <button (click)="addQuantity()">
           <img
             src="https://img.icons8.com/?size=100&id=FnGQHvpuVbBr&format=png&color=FAB005"
             alt="plus-icon"
