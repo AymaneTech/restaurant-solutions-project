@@ -12,8 +12,6 @@ import org.mapstruct.ReportingPolicy;
 public interface BaseMapper<E, R, S> {
     E toEntity(R dto);
 
-    void updateEntity(@MappingTarget E entity, R request);
-
     S toResponseDto(E entity);
 }
 

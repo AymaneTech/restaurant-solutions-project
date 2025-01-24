@@ -1,13 +1,9 @@
-import { Component } from '@angular/core';
-import {OrderPageComponent} from '../../../../features/customer/order/pages/order-page/order-page.component';
-import {NgIf} from '@angular/common';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-customer-header',
-  imports: [
-    OrderPageComponent,
-    NgIf
-  ],
+  imports: [CommonModule],
   standalone: true,
   templateUrl: './customer-header.component.html',
 })
