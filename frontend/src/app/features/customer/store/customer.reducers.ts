@@ -1,26 +1,41 @@
 import {createReducer, on} from '@ngrx/store';
-import {Recipe} from '../menu/menu.model';
-import {addRecipeToOrders, incrementOrderCount} from './customer.actions';
+import {OrderItem} from '../menu/menu.model';
+import {addRecipeToOrders, removeOrderItem} from './customer.actions';
 
 export interface CustomerState {
-  orderCount: number;
-  orderedRecipes: Recipe[];
+    orderItems: OrderItem[];
 }
 
 export const initialState: CustomerState = {
-  orderCount: 0,
-  orderedRecipes: []
+    orderItems: []
 }
 
 export const customerReducer = createReducer(
-  initialState,
-  on(incrementOrderCount, (state) => ({
-    ...state,
-    orderCount: state.orderCount + 1
-  })),
-  on(addRecipeToOrders, (state, {recipe}) => ({
-    ...state,
-    orderedRecipes: [...state.orderedRecipes, recipe]
-  }))
+    initialState,
+    on(addRecipeToOrders, (state, {recipe}) => {
+        const existingOrderItem = state.orderItems.find(orderItem => orderItem.recipe.id === recipe.id);
 
+        const updatedOrderItems = existingOrderItem
+            ? state.orderItems.map(orderItem =>
+                orderItem.recipe.id === recipe.id
+                    ? {...orderItem, quantity: orderItem.quantity + 1}
+                    : orderItem
+            )
+            : [...state.orderItems, {recipe, quantity: 1}];
+
+        return {
+            ...state,
+            orderItems: updatedOrderItems
+        };
+    }),
+    on(removeOrderItem, (state, {item}) => {
+        const updatedOrderItems = state.orderItems.filter(
+            oi => oi.recipe.id !== item.recipe.id
+        );
+
+        return {
+            ...state,
+            orderItems: updatedOrderItems
+        }
+    })
 )

@@ -1,8 +1,8 @@
-import {Component, Input, OnChanges} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {Recipe} from '../../menu.model';
 import {Store} from '@ngrx/store';
-import {addRecipeToOrders, incrementOrderCount} from '../../../store/customer.actions';
+import {addRecipeToOrders} from '../../../store/customer.actions';
 
 
 @Component({
@@ -12,18 +12,13 @@ import {addRecipeToOrders, incrementOrderCount} from '../../../store/customer.ac
   standalone: true,
   styleUrl: './item-details.component.css'
 })
-export class ItemDetailsComponent implements OnChanges {
+export class ItemDetailsComponent {
   @Input() recipe!: Recipe;
 
   constructor(private store: Store) {
   }
 
-  ngOnChanges() {
-    console.log('Recipe received in ItemDetailsComponent:', this.recipe);
-  }
-
   orderNow() {
-    this.store.dispatch(incrementOrderCount());
     this.store.dispatch(addRecipeToOrders(this.recipe));
   }
 }

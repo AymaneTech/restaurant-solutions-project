@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {OrderItem} from '../../../menu/menu.model';
+import {Store} from '@ngrx/store';
+import {removeOrderItem} from '../../../store/customer.actions';
 
 @Component({
   selector: 'app-order-item',
@@ -9,4 +12,12 @@ import { Component } from '@angular/core';
 })
 export class OrderItemComponent {
 
+  @Input() item!: OrderItem;
+
+  constructor(private readonly store: Store) {
+  }
+
+  removeItem(): void {
+    this.store.dispatch(removeOrderItem({item: this.item}));
+  }
 }

@@ -1,32 +1,33 @@
 import {Component} from '@angular/core';
+import {OrderItem} from '../../../menu/menu.model';
+import {CommonModule} from '@angular/common';
+import {Store} from '@ngrx/store';
+import {selectOrderedRecipes} from '../../../store/customer.selectors';
+import {Observable} from 'rxjs';
 import {OrderItemComponent} from '../../components/order-item/order-item.component';
-import {Recipe} from '../../../menu/menu.model';
-import {OrderService} from '../../order.service';
-import {NgForOf} from '@angular/common';
 
 @Component({
   selector: 'app-order-page',
   imports: [
-    OrderItemComponent,
-    NgForOf
+    CommonModule,
+    OrderItemComponent
   ],
   templateUrl: './order-page.component.html',
   standalone: true,
   styleUrl: './order-page.component.css'
 })
 export class OrderPageComponent {
-  orderItems: Recipe[] = [];
+  orderedItems$: Observable<OrderItem[]>;
   totalPrice = 0;
 
-  constructor(private orderService: OrderService) {
-    this.orderService.orderItems$.subscribe((items) => {
-      this.orderItems = items;
-      this.totalPrice = this.orderService.getOrderTotal();
+  constructor(private readonly store: Store) {
+    this.orderedItems$ = this.store.select(selectOrderedRecipes);
+    this.calculatePrice();
+  }
+
+  private calculatePrice() {
+    this.orderedItems$.subscribe((items) => {
+      this.totalPrice = items.reduce((total, item) => total + (item.quantity * item.recipe.price), 0);
     });
   }
-
-  removeItem(index: number) {
-    this.orderService.removeFromOrder(index);
-  }
-
 }
