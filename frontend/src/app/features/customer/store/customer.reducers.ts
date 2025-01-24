@@ -1,6 +1,6 @@
 import {createReducer, on} from '@ngrx/store';
 import {OrderItem} from '../menu/menu.model';
-import {addRecipeToOrders, removeOrderItem} from './customer.actions';
+import {addOrderItemQuantity, addRecipeToOrders, reduceOrderItemQuantity, removeOrderItem} from './customer.actions';
 
 export interface CustomerState {
     orderItems: OrderItem[];
@@ -37,5 +37,21 @@ export const customerReducer = createReducer(
             ...state,
             orderItems: updatedOrderItems
         }
-    })
+    }),
+  on(addOrderItemQuantity, (state, { itemId }) => ({
+    ...state,
+    orderItems: state.orderItems.map(item =>
+      item.recipe.id === itemId
+        ? { ...item, quantity: item.quantity + 1 }
+        : item
+    )
+  })),
+  on(reduceOrderItemQuantity, (state, { itemId }) => ({
+    ...state,
+    orderItems: state.orderItems.map(item =>
+      item.recipe.id === itemId && item.quantity > 0
+        ? { ...item, quantity: item.quantity - 1 }
+        : item
+    )
+  }))
 )
