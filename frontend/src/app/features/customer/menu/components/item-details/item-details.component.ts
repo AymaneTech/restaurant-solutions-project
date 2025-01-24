@@ -1,6 +1,8 @@
-import { Component, Input, OnChanges } from '@angular/core';
-import { CommonModule } from '@angular/common'; // Utiliser CommonModule ici
-import { Recipe } from '../../menu.model';
+import {Component, Input} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {Recipe} from '../../menu.model';
+import {Store} from '@ngrx/store';
+import {addRecipeToOrders} from '../../../store/customer.actions';
 
 
 @Component({
@@ -10,10 +12,13 @@ import { Recipe } from '../../menu.model';
   standalone: true,
   styleUrl: './item-details.component.css'
 })
-export class ItemDetailsComponent implements OnChanges {
+export class ItemDetailsComponent {
   @Input() recipe!: Recipe;
 
-  ngOnChanges() {
-    console.log('Recipe received in ItemDetailsComponent:', this.recipe);
+  constructor(private store: Store) {
+  }
+
+  orderNow() {
+    this.store.dispatch(addRecipeToOrders(this.recipe));
   }
 }

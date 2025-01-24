@@ -17,6 +17,7 @@ public record RecipeRequestDto(@NotBlank
                                @NotBlank String description,
                                @NotBlank BigDecimal price,
                                @NotBlank MultipartFile image,
+                               boolean available,
                                @NotNull
                                @ReferenceExists(entityClass = Category.class, idClass = CategoryId.class, message = "category must exist")
                                Long categoryId

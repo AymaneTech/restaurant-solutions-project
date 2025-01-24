@@ -34,5 +34,6 @@ export class CategoriesListComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.dispatch(CategoryActions.loadCategories());
+    this.categories$.subscribe(categories => console.log('categories', categories))
   }
 }
