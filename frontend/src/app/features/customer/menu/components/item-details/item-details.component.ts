@@ -7,6 +7,7 @@ import { Recipe } from '../../menu.model';
   selector: 'app-item-details',
   imports: [CommonModule],
   templateUrl: './item-details.component.html',
+  standalone: true,
   styleUrl: './item-details.component.css'
 })
 export class ItemDetailsComponent implements OnChanges {

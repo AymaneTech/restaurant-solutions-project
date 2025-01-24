@@ -6,7 +6,11 @@ import { ItemDetailsComponent } from './features/customer/menu/components/item-d
 
 @Component({
   selector: 'app-root',
-  imports: [ MenuItemComponent, ItemDetailsComponent, RouterOutlet],
+  imports: [
+    MenuItemComponent,
+    ItemDetailsComponent,
+    RouterOutlet,
+],
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

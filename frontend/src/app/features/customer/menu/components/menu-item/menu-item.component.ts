@@ -7,13 +7,14 @@ import { ItemDetailsComponent } from '../item-details/item-details.component';
   selector: 'app-menu-item',
   imports: [CommonModule, ItemDetailsComponent],
   // import { Recipe } from './../../menu.model';
-templateUrl: './menu-item.component.html',
+  templateUrl: './menu-item.component.html',
 
+  standalone: true
 })
 export class MenuItemComponent {
   @Input() recipe!: Recipe;
   showPopup = false;
-  openPopup(): void {    
+  openPopup(): void {
     this.showPopup = true;
   }
 
