@@ -24,7 +24,6 @@
       </div>
 
       <button class="md:hidden text-white">
-        {{ orderCount$ | async }}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-6 w-6"
@@ -41,6 +40,8 @@
         </svg>
       </button>
     </div>
-    <app-order-page *ngIf="showOrderPanel"/>
+    @if (showOrderPanel) {
+      <app-order-page/>
+    }
   </nav>
 </div>
